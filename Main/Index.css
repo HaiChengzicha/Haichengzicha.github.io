@@ -1,0 +1,244 @@
+html,body{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+body{
+    background-color: #f5f5f5;
+    background-image: linear-gradient(135deg, #fff7e6 0%, #ffcc99 100%);
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; /* 禁止水平滚动 */
+    overflow-y: auto; /* 允许垂直滚动 */
+}
+
+/* 确保刷新按钮容器不会导致布局偏移 */
+#refreshContainer {
+    position: relative;
+    z-index: 1;
+    clear: both;
+}
+
+.Index_Header{
+    background-color: white;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* 标题容器样式 */
+.header-title-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 标题名字 */
+.Index_Header h1{
+    color: #2c3e50;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* 响应式设计 - 小屏幕时调整标题和按钮的布局 */
+@media (max-width: 768px) {
+    .header-title-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .Index_Header h1 {
+        font-size: 24px;
+    }
+    
+
+    
+    .Index_Header {
+        padding: 0 1rem;
+    }
+}
+
+
+
+
+
+/* 轮播图容器样式 (现在作为方框容器) */
+.Pic_Ro {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    margin: 60px auto 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 占位方框样式 */
+.placeholder-box {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* 主内容区域样式 */
+.main-content {
+    width: 100%;
+    max-width: 1300px;
+    margin: -925px auto 40px;
+    padding: 0 5px 0 5px;
+    display: flex;
+    gap: 20px;
+    height: 900px;
+}
+
+
+
+/* 内容网格区域样式 */
+.content-grid {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* 行样式 */
+.grid-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: -5px;
+    flex: 1;
+}
+
+/* 方框样式 */
+.grid-box {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    min-height: 280px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+/* 方框悬停效果 */
+.grid-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 网格框链接样式 - 应用与grid-box相同的样式，确保整个区域可点击且大小一致 */
+.grid-box-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    min-height: 280px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* 方框图标样式 */
+.box-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+/* 方框文字样式 */
+.box-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* 方框悬停效果 */
+.grid-box-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 方框点击动画 */
+.grid-box-link:active {
+    transform: scale(0.97);
+    background-color: rgba(255, 165, 0, 0.05);
+    transition: all 0.27s ease;
+}
+
+/* 方框样式 */
+.grid-box {
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.grid-box:active {
+    transform: scale(0.97);
+    background-color: rgba(255, 165, 0, 0.05);
+    transition: all 0.27s ease;
+}
+
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .grid-row {
+        flex-wrap: wrap;
+    }
+    
+    .grid-box {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+    
+    .grid-row:last-child .grid-box:last-child {
+        margin-bottom: 0;
+    }
+}
